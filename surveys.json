@@ -1,0 +1,2090 @@
+{
+ "version": 10,
+ "ml_available": false,
+ "ui": {
+  "en": {
+   "start": "Let's start",
+   "send": "Send",
+   "undo": "Undo",
+   "skip": "Skip",
+   "pick_up_to": "Pick up to {n}",
+   "pick_one": "Tap one",
+   "progress": "{i} of {n}",
+   "meta": "{n} questions · about {m} min · anonymous",
+   "meta_named": "{n} questions · about {m} min · anonymous",
+   "offer_body": "Core done. {m} more min of extras?",
+   "offer_yes": "Keep going",
+   "offer_no": "I am done",
+   "contact_ask": "Great. Email or phone? Stored apart from your answers.",
+   "contact_placeholder": "Email or phone number",
+   "contact_send": "Send",
+   "contact_skip": "Skip",
+   "contact_bad": "Not an email or phone number. Try again.",
+   "contact_thanks": "Contact shared",
+   "done_body": "Thank you. Your answers are saved. You can close this page.",
+   "error_body": "Could not save. Check your connection, then retry.",
+   "retry": "Try again",
+   "skipped": "Skipped",
+   "preview_note": "Preview. Nothing you tap is saved.",
+   "text_placeholder": "Write in any language. Please no names or phone numbers.",
+   "credit": "Research conducted by Polaris Concepts LLP for Transparent Academy.",
+   "unknown_survey": "This link is not valid."
+  }
+ },
+ "surveys": {
+  "students": {
+   "id": "students",
+   "label": "Students",
+   "title": "The Student Experience",
+   "intro": "Brand Discovery and Perception Research. Form 01, for current students.",
+   "welcome": [
+    "Let's talk about Transparent Academy.",
+    "Every institution has a story. But the people connected to it experience that story differently.",
+    "We want to understand yours.",
+    "What stands out? What could be better? What do you wish people understood?",
+    "There are no right or wrong answers. We're interested in your honest perspective, not the answer you think someone wants to hear.",
+    "Your responses will be collected anonymously and used to understand the academy's identity and shape its future direction.",
+    "Take a few minutes, be yourself, and tell us what you really think."
+   ],
+   "consent": [
+    "Anonymous: no name, no email",
+    "About 5 to 7 minutes",
+    "Every written answer is optional",
+    "Skip anything. Stop anytime",
+    "Shown as group results only"
+   ],
+   "chapters": {
+    "1. The First Impression": "Let's rewind a little.",
+    "2. The Everyday Reality": "Now that you're here, what's it actually like?",
+    "3. The Unfiltered Truth": "Every place has room to grow.",
+    "4. The Academy of Tomorrow": "Let's imagine what could be."
+   },
+   "seconds_per_question": 25,
+   "dedupe_by_device": true,
+   "round2_offer": false,
+   "questions": [
+    {
+     "id": "Q1",
+     "chapter": "1. The First Impression",
+     "round": 1,
+     "type": "single",
+     "text": "When you think of Transparent Academy, what's the first thing that pops into your head?",
+     "options": [
+      {
+       "id": "a",
+       "label": "A place that helps students move towards their goals."
+      },
+      {
+       "id": "b",
+       "label": "An institution that focuses heavily on results."
+      },
+      {
+       "id": "c",
+       "label": "A place with potential, but not a particularly distinctive identity.",
+       "signal": "critical"
+      },
+      {
+       "id": "d",
+       "label": "The people, teachers, and relationships."
+      },
+      {
+       "id": "e",
+       "label": "Something else? Tell us in your own words. (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "perception"
+    },
+    {
+     "id": "Q1t",
+     "chapter": "1. The First Impression",
+     "round": 1,
+     "type": "text",
+     "text": "Tell us in your own words.",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q1",
+     "when": "e",
+     "lens": "perception"
+    },
+    {
+     "id": "Q2",
+     "chapter": "1. The First Impression",
+     "round": 1,
+     "type": "single",
+     "text": "Before joining Transparent Academy, what did you imagine it would be like?",
+     "options": [
+      {
+       "id": "a",
+       "label": "A place with excellent teaching and academic support."
+      },
+      {
+       "id": "b",
+       "label": "A place where academic pressure would be a major part of everyday life."
+      },
+      {
+       "id": "c",
+       "label": "A place where I'd have to figure things out largely on my own.",
+       "signal": "critical"
+      },
+      {
+       "id": "d",
+       "label": "A place where I could grow academically and personally."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What were your expectations? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "perception"
+    },
+    {
+     "id": "Q2t",
+     "chapter": "1. The First Impression",
+     "round": 1,
+     "type": "text",
+     "text": "What were your expectations?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q2",
+     "when": "e",
+     "lens": "perception"
+    },
+    {
+     "id": "Q3",
+     "chapter": "1. The First Impression",
+     "round": 1,
+     "type": "single",
+     "text": "What influenced your decision to join Transparent Academy the most?",
+     "options": [
+      {
+       "id": "a",
+       "label": "A recommendation from someone I trusted."
+      },
+      {
+       "id": "b",
+       "label": "Its reputation or academic results."
+      },
+      {
+       "id": "c",
+       "label": "The courses or opportunities available."
+      },
+      {
+       "id": "d",
+       "label": "I chose it mainly because of the options available to me at the time.",
+       "signal": "critical"
+      },
+      {
+       "id": "e",
+       "label": "Something else? Tell us what influenced your decision. (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "perception"
+    },
+    {
+     "id": "Q3t",
+     "chapter": "1. The First Impression",
+     "round": 1,
+     "type": "text",
+     "text": "Tell us what influenced your decision.",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q3",
+     "when": "e",
+     "lens": "perception"
+    },
+    {
+     "id": "Q4",
+     "chapter": "2. The Everyday Reality",
+     "round": 1,
+     "type": "single",
+     "text": "Which statement best describes your experience at Transparent Academy?",
+     "options": [
+      {
+       "id": "a",
+       "label": "I feel supported and guided towards my goals."
+      },
+      {
+       "id": "b",
+       "label": "I feel challenged, but the pressure can sometimes be overwhelming.",
+       "signal": "critical"
+      },
+      {
+       "id": "c",
+       "label": "My experience is mostly ordinary; nothing stands out significantly.",
+       "signal": "critical"
+      },
+      {
+       "id": "d",
+       "label": "I have opportunities to learn and grow beyond academics."
+      },
+      {
+       "id": "e",
+       "label": "Something else? Describe your experience. (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "emotion"
+    },
+    {
+     "id": "Q4t",
+     "chapter": "2. The Everyday Reality",
+     "round": 1,
+     "type": "text",
+     "text": "Describe your experience.",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q4",
+     "when": "e",
+     "lens": "emotion"
+    },
+    {
+     "id": "Q5",
+     "chapter": "2. The Everyday Reality",
+     "round": 1,
+     "type": "single",
+     "text": "What's one thing about Transparent Academy that genuinely makes a difference in your day?",
+     "options": [
+      {
+       "id": "a",
+       "label": "The way teachers explain and support learning."
+      },
+      {
+       "id": "b",
+       "label": "The people, friendships, and sense of belonging."
+      },
+      {
+       "id": "c",
+       "label": "I haven't experienced anything particularly distinctive yet.",
+       "signal": "critical"
+      },
+      {
+       "id": "d",
+       "label": "Seeing my progress and achievements."
+      },
+      {
+       "id": "e",
+       "label": "Something else? Tell us what matters to you. (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "emotion"
+    },
+    {
+     "id": "Q5t",
+     "chapter": "2. The Everyday Reality",
+     "round": 1,
+     "type": "text",
+     "text": "Tell us what matters to you.",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q5",
+     "when": "e",
+     "lens": "emotion"
+    },
+    {
+     "id": "Q6",
+     "chapter": "2. The Everyday Reality",
+     "round": 1,
+     "type": "single",
+     "text": "If Transparent Academy were a person in your life, who would they be?",
+     "options": [
+      {
+       "id": "a",
+       "label": "A mentor who guides me."
+      },
+      {
+       "id": "b",
+       "label": "A strict coach who expects results, sometimes without understanding my struggles.",
+       "signal": "critical"
+      },
+      {
+       "id": "c",
+       "label": "An acquaintance I'm still trying to understand.",
+       "signal": "critical"
+      },
+      {
+       "id": "d",
+       "label": "A supportive friend who encourages me to grow."
+      },
+      {
+       "id": "e",
+       "label": "Something else? Describe your comparison. (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "emotion"
+    },
+    {
+     "id": "Q6t",
+     "chapter": "2. The Everyday Reality",
+     "round": 1,
+     "type": "text",
+     "text": "Describe your comparison.",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q6",
+     "when": "e",
+     "lens": "emotion"
+    },
+    {
+     "id": "Q7",
+     "chapter": "2. The Everyday Reality",
+     "round": 1,
+     "type": "single",
+     "text": "If Transparent Academy disappeared from your social media feed for a month, what would you miss seeing?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Useful educational content and learning tips."
+      },
+      {
+       "id": "b",
+       "label": "Student achievements and success stories."
+      },
+      {
+       "id": "c",
+       "label": "Nothing particularly memorable or relevant to me.",
+       "signal": "critical"
+      },
+      {
+       "id": "d",
+       "label": "Updates about courses, opportunities, and activities."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What content, if any, would you miss? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "emotion"
+    },
+    {
+     "id": "Q7t",
+     "chapter": "2. The Everyday Reality",
+     "round": 1,
+     "type": "text",
+     "text": "What content, if any, would you miss?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q7",
+     "when": "e",
+     "lens": "emotion"
+    },
+    {
+     "id": "Q8",
+     "chapter": "3. The Unfiltered Truth",
+     "round": 1,
+     "type": "single",
+     "text": "What do you wish Transparent Academy understood better about students like you?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Our academic pressure and expectations."
+      },
+      {
+       "id": "b",
+       "label": "Our personal struggles, responsibilities, and limitations."
+      },
+      {
+       "id": "c",
+       "label": "Our ambitions beyond academics."
+      },
+      {
+       "id": "d",
+       "label": "The way we prefer to learn, communicate, and participate."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What do you wish they understood? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "gap",
+     "needs": true
+    },
+    {
+     "id": "Q8t",
+     "chapter": "3. The Unfiltered Truth",
+     "round": 1,
+     "type": "text",
+     "text": "What do you wish they understood?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q8",
+     "when": "e",
+     "lens": "gap"
+    },
+    {
+     "id": "Q9",
+     "chapter": "3. The Unfiltered Truth",
+     "round": 1,
+     "type": "single",
+     "text": "If you could change one thing about your experience at Transparent Academy, what would it be?",
+     "options": [
+      {
+       "id": "a",
+       "label": "More engaging and interactive learning experiences."
+      },
+      {
+       "id": "b",
+       "label": "Better communication and personalised support."
+      },
+      {
+       "id": "c",
+       "label": "More opportunities beyond the classroom."
+      },
+      {
+       "id": "d",
+       "label": "Better facilities, resources, or everyday systems."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What would you change? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "gap",
+     "needs": true
+    },
+    {
+     "id": "Q9t",
+     "chapter": "3. The Unfiltered Truth",
+     "round": 1,
+     "type": "text",
+     "text": "What would you change?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q9",
+     "when": "e",
+     "lens": "gap"
+    },
+    {
+     "id": "Q10",
+     "chapter": "3. The Unfiltered Truth",
+     "round": 1,
+     "type": "single",
+     "text": "If a close friend asked you about Transparent Academy, what would you honestly say?",
+     "options": [
+      {
+       "id": "a",
+       "label": "It's a place worth exploring if it matches your goals."
+      },
+      {
+       "id": "b",
+       "label": "It has good qualities, but there are areas that need improvement.",
+       "signal": "critical"
+      },
+      {
+       "id": "c",
+       "label": "I haven't experienced enough to recommend it confidently.",
+       "signal": "critical"
+      },
+      {
+       "id": "d",
+       "label": "It offers opportunities that can help students move forward."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What would you actually tell them? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "gap"
+    },
+    {
+     "id": "Q10t",
+     "chapter": "3. The Unfiltered Truth",
+     "round": 1,
+     "type": "text",
+     "text": "What would you actually tell them?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q10",
+     "when": "e",
+     "lens": "gap"
+    },
+    {
+     "id": "Q11",
+     "chapter": "4. The Academy of Tomorrow",
+     "round": 1,
+     "type": "single",
+     "text": "If Transparent Academy had a personality, which description would fit it best?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Ambitious and achievement-driven."
+      },
+      {
+       "id": "b",
+       "label": "Disciplined and demanding, sometimes too rigid.",
+       "signal": "critical"
+      },
+      {
+       "id": "c",
+       "label": "Friendly, but not particularly distinctive.",
+       "signal": "critical"
+      },
+      {
+       "id": "d",
+       "label": "Supportive and approachable."
+      },
+      {
+       "id": "e",
+       "label": "Something else? Describe the academy in your own words. (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "perception"
+    },
+    {
+     "id": "Q11t",
+     "chapter": "4. The Academy of Tomorrow",
+     "round": 1,
+     "type": "text",
+     "text": "Describe the academy in your own words.",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q11",
+     "when": "e",
+     "lens": "perception"
+    },
+    {
+     "id": "Q12",
+     "chapter": "4. The Academy of Tomorrow",
+     "round": 1,
+     "type": "single",
+     "text": "Imagine Transparent Academy five years from now. What would make you proud to have studied here?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Seeing students achieve remarkable results."
+      },
+      {
+       "id": "b",
+       "label": "Knowing it genuinely transforms students' lives."
+      },
+      {
+       "id": "c",
+       "label": "Seeing it become a recognised educational brand."
+      },
+      {
+       "id": "d",
+       "label": "Knowing it creates opportunities beyond academics."
+      },
+      {
+       "id": "e",
+       "label": "Something else? Describe your vision. (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "future"
+    },
+    {
+     "id": "Q12t",
+     "chapter": "4. The Academy of Tomorrow",
+     "round": 1,
+     "type": "text",
+     "text": "Describe your vision.",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q12",
+     "when": "e",
+     "lens": "future"
+    },
+    {
+     "id": "Q13",
+     "chapter": "4. The Academy of Tomorrow",
+     "round": 1,
+     "type": "single",
+     "text": "If Transparent Academy could be remembered for just one thing, what should it be?",
+     "options": [
+      {
+       "id": "a",
+       "label": "The results it helps students achieve."
+      },
+      {
+       "id": "b",
+       "label": "The confidence and capabilities it builds."
+      },
+      {
+       "id": "c",
+       "label": "Its distinctive approach to education."
+      },
+      {
+       "id": "d",
+       "label": "The difference it makes in students' lives."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What should its legacy be? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "future"
+    },
+    {
+     "id": "Q13t",
+     "chapter": "4. The Academy of Tomorrow",
+     "round": 1,
+     "type": "text",
+     "text": "What should its legacy be?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q13",
+     "when": "e",
+     "lens": "future"
+    },
+    {
+     "id": "Q14",
+     "chapter": "4. The Academy of Tomorrow",
+     "round": 1,
+     "type": "text",
+     "text": "If you could tell the people behind Transparent Academy one thing without hesitation, what would you say?",
+     "hint": "Your own words. Share anything you'd like them to hear. (Optional)",
+     "max_chars": 600,
+     "na": "Skip",
+     "lens": "future"
+    }
+   ]
+  },
+  "alumni": {
+   "id": "alumni",
+   "label": "Alumni",
+   "title": "The Alumni Story",
+   "intro": "Brand Discovery and Perception Research. Form 02, for former students.",
+   "welcome": [
+    "Let's talk about Transparent Academy.",
+    "Every institution has a story. But the people connected to it experience that story differently.",
+    "We want to understand yours.",
+    "What stands out? What could be better? What do you wish people understood?",
+    "There are no right or wrong answers. We're interested in your honest perspective, not the answer you think someone wants to hear.",
+    "Your responses will be collected anonymously and used to understand the academy's identity and shape its future direction.",
+    "Take a few minutes, be yourself, and tell us what you really think."
+   ],
+   "consent": [
+    "Anonymous: no name, no email",
+    "About 5 to 7 minutes",
+    "Every written answer is optional",
+    "Skip anything. Stop anytime",
+    "Shown as group results only"
+   ],
+   "chapters": {
+    "1. Back to Where It Started": "Some places stay with us long after we leave.",
+    "2. The Impact Over Time": "Now that life has moved forward, let's look back.",
+    "3. The Honest Reflection": "Distance can give us a different perspective.",
+    "4. The Connection That Remains": "Leaving a place doesn't always mean leaving its story."
+   },
+   "seconds_per_question": 25,
+   "dedupe_by_device": true,
+   "round2_offer": false,
+   "questions": [
+    {
+     "id": "Q1",
+     "chapter": "1. Back to Where It Started",
+     "round": 1,
+     "type": "single",
+     "text": "When you think of your time at Transparent Academy, what's the first thing that comes to mind?",
+     "options": [
+      {
+       "id": "a",
+       "label": "The teachers who influenced me."
+      },
+      {
+       "id": "b",
+       "label": "The people, friendships, and shared experiences."
+      },
+      {
+       "id": "c",
+       "label": "The challenges or disappointments I experienced.",
+       "signal": "critical"
+      },
+      {
+       "id": "d",
+       "label": "The achievements and lessons that shaped my journey."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What's your first memory? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "emotion"
+    },
+    {
+     "id": "Q1t",
+     "chapter": "1. Back to Where It Started",
+     "round": 1,
+     "type": "text",
+     "text": "What's your first memory?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q1",
+     "when": "e",
+     "lens": "emotion"
+    },
+    {
+     "id": "Q2",
+     "chapter": "1. Back to Where It Started",
+     "round": 1,
+     "type": "single",
+     "text": "If you could revisit one part of your experience, what would you choose?",
+     "options": [
+      {
+       "id": "a",
+       "label": "The classroom and learning experience."
+      },
+      {
+       "id": "b",
+       "label": "The friendships and connections."
+      },
+      {
+       "id": "c",
+       "label": "A moment I wish had gone differently.",
+       "signal": "critical"
+      },
+      {
+       "id": "d",
+       "label": "An achievement or milestone I'm proud of."
+      },
+      {
+       "id": "e",
+       "label": "Something else? Which moment would you revisit, and why? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "emotion"
+    },
+    {
+     "id": "Q2t",
+     "chapter": "1. Back to Where It Started",
+     "round": 1,
+     "type": "text",
+     "text": "Which moment would you revisit, and why?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q2",
+     "when": "e",
+     "lens": "emotion"
+    },
+    {
+     "id": "Q3",
+     "chapter": "1. Back to Where It Started",
+     "round": 1,
+     "type": "single",
+     "text": "What do you think your younger self needed most during your time there?",
+     "options": [
+      {
+       "id": "a",
+       "label": "More encouragement and confidence."
+      },
+      {
+       "id": "b",
+       "label": "Better academic guidance and support."
+      },
+      {
+       "id": "c",
+       "label": "More practical opportunities to explore."
+      },
+      {
+       "id": "d",
+       "label": "A better understanding of my strengths and ambitions."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What would you tell your younger self? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "gap",
+     "needs": true
+    },
+    {
+     "id": "Q3t",
+     "chapter": "1. Back to Where It Started",
+     "round": 1,
+     "type": "text",
+     "text": "What would you tell your younger self?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q3",
+     "when": "e",
+     "lens": "gap"
+    },
+    {
+     "id": "Q4",
+     "chapter": "2. The Impact Over Time",
+     "round": 1,
+     "type": "single",
+     "text": "Looking back, what role did Transparent Academy play in your journey?",
+     "options": [
+      {
+       "id": "a",
+       "label": "It helped me build a strong foundation."
+      },
+      {
+       "id": "b",
+       "label": "It gave me confidence to pursue my goals."
+      },
+      {
+       "id": "c",
+       "label": "Its impact on my journey was limited.",
+       "signal": "critical"
+      },
+      {
+       "id": "d",
+       "label": "It introduced me to people and experiences that mattered."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What difference did it make, if any? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "perception"
+    },
+    {
+     "id": "Q4t",
+     "chapter": "2. The Impact Over Time",
+     "round": 1,
+     "type": "text",
+     "text": "What difference did it make, if any?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q4",
+     "when": "e",
+     "lens": "perception"
+    },
+    {
+     "id": "Q5",
+     "chapter": "2. The Impact Over Time",
+     "round": 1,
+     "type": "single",
+     "text": "Is there anything you learnt at Transparent Academy that you still carry with you today?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Academic knowledge or practical skills."
+      },
+      {
+       "id": "b",
+       "label": "Discipline, consistency, or resilience."
+      },
+      {
+       "id": "c",
+       "label": "Relationships and shared experiences."
+      },
+      {
+       "id": "d",
+       "label": "Nothing particularly significant comes to mind.",
+       "signal": "critical"
+      },
+      {
+       "id": "e",
+       "label": "Something else? What's one lesson you still remember? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "emotion"
+    },
+    {
+     "id": "Q5t",
+     "chapter": "2. The Impact Over Time",
+     "round": 1,
+     "type": "text",
+     "text": "What's one lesson you still remember?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q5",
+     "when": "e",
+     "lens": "emotion"
+    },
+    {
+     "id": "Q6",
+     "chapter": "2. The Impact Over Time",
+     "round": 1,
+     "type": "single",
+     "text": "If your experience at Transparent Academy were a chapter in your life story, what would its title be?",
+     "options": [
+      {
+       "id": "a",
+       "label": "The Beginning."
+      },
+      {
+       "id": "b",
+       "label": "The Turning Point."
+      },
+      {
+       "id": "c",
+       "label": "The Learning Curve."
+      },
+      {
+       "id": "d",
+       "label": "The Unexpected Journey."
+      },
+      {
+       "id": "e",
+       "label": "Something else? Give that chapter your own title. (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "emotion"
+    },
+    {
+     "id": "Q6t",
+     "chapter": "2. The Impact Over Time",
+     "round": 1,
+     "type": "text",
+     "text": "Give that chapter your own title.",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q6",
+     "when": "e",
+     "lens": "emotion"
+    },
+    {
+     "id": "Q7",
+     "chapter": "2. The Impact Over Time",
+     "round": 1,
+     "type": "single",
+     "text": "Has your perception of Transparent Academy changed since you left?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Yes, I appreciate the experience more now."
+      },
+      {
+       "id": "b",
+       "label": "Yes, I recognise its limitations more clearly.",
+       "signal": "critical"
+      },
+      {
+       "id": "c",
+       "label": "My perception has become more balanced."
+      },
+      {
+       "id": "d",
+       "label": "My perception hasn't changed much."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What changed your perspective? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "perception"
+    },
+    {
+     "id": "Q7t",
+     "chapter": "2. The Impact Over Time",
+     "round": 1,
+     "type": "text",
+     "text": "What changed your perspective?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q7",
+     "when": "e",
+     "lens": "perception"
+    },
+    {
+     "id": "Q8",
+     "chapter": "3. The Honest Reflection",
+     "round": 1,
+     "type": "single",
+     "text": "With the benefit of hindsight, what could Transparent Academy have done better?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Offered more personalised guidance."
+      },
+      {
+       "id": "b",
+       "label": "Created more practical learning opportunities."
+      },
+      {
+       "id": "c",
+       "label": "Provided stronger academic or personal support."
+      },
+      {
+       "id": "d",
+       "label": "Communicated expectations and information more effectively."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What would have improved your experience? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "gap",
+     "needs": true
+    },
+    {
+     "id": "Q8t",
+     "chapter": "3. The Honest Reflection",
+     "round": 1,
+     "type": "text",
+     "text": "What would have improved your experience?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q8",
+     "when": "e",
+     "lens": "gap"
+    },
+    {
+     "id": "Q9",
+     "chapter": "3. The Honest Reflection",
+     "round": 1,
+     "type": "single",
+     "text": "If someone asked whether Transparent Academy made a meaningful difference in your life, how would you respond?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Absolutely — it played an important role."
+      },
+      {
+       "id": "b",
+       "label": "Yes, but only in certain aspects of my journey."
+      },
+      {
+       "id": "c",
+       "label": "Its impact was limited compared with my expectations.",
+       "signal": "critical"
+      },
+      {
+       "id": "d",
+       "label": "I'm still figuring out how much it influenced me."
+      },
+      {
+       "id": "e",
+       "label": "Something else? Explain your answer. (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "emotion"
+    },
+    {
+     "id": "Q9t",
+     "chapter": "3. The Honest Reflection",
+     "round": 1,
+     "type": "text",
+     "text": "Explain your answer.",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q9",
+     "when": "e",
+     "lens": "emotion"
+    },
+    {
+     "id": "Q10",
+     "chapter": "3. The Honest Reflection",
+     "round": 1,
+     "type": "single",
+     "text": "If you were introducing Transparent Academy to someone today, what would you mention first?",
+     "options": [
+      {
+       "id": "a",
+       "label": "My experience as a student."
+      },
+      {
+       "id": "b",
+       "label": "The teachers and their influence."
+      },
+      {
+       "id": "c",
+       "label": "The opportunities and learning experiences."
+      },
+      {
+       "id": "d",
+       "label": "The things I believe could have been better.",
+       "signal": "critical"
+      },
+      {
+       "id": "e",
+       "label": "Something else? How would you introduce the academy today? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "perception"
+    },
+    {
+     "id": "Q10t",
+     "chapter": "3. The Honest Reflection",
+     "round": 1,
+     "type": "text",
+     "text": "How would you introduce the academy today?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q10",
+     "when": "e",
+     "lens": "perception"
+    },
+    {
+     "id": "Q11",
+     "chapter": "4. The Connection That Remains",
+     "round": 1,
+     "type": "single",
+     "text": "What would make you feel more connected to Transparent Academy today?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Updates about students and alumni."
+      },
+      {
+       "id": "b",
+       "label": "Opportunities to mentor current students."
+      },
+      {
+       "id": "c",
+       "label": "Alumni reunions and networking."
+      },
+      {
+       "id": "d",
+       "label": "Opportunities to contribute to its growth."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What would bring you closer to the academy? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "future"
+    },
+    {
+     "id": "Q11t",
+     "chapter": "4. The Connection That Remains",
+     "round": 1,
+     "type": "text",
+     "text": "What would bring you closer to the academy?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q11",
+     "when": "e",
+     "lens": "future"
+    },
+    {
+     "id": "Q12",
+     "chapter": "4. The Connection That Remains",
+     "round": 1,
+     "type": "single",
+     "text": "What kind of story about Transparent Academy would you genuinely enjoy seeing?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Stories of student transformation."
+      },
+      {
+       "id": "b",
+       "label": "Behind-the-scenes stories about teachers."
+      },
+      {
+       "id": "c",
+       "label": "Alumni journeys and achievements."
+      },
+      {
+       "id": "d",
+       "label": "Honest stories about challenges and growth."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What story deserves to be told? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "future"
+    },
+    {
+     "id": "Q12t",
+     "chapter": "4. The Connection That Remains",
+     "round": 1,
+     "type": "text",
+     "text": "What story deserves to be told?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q12",
+     "when": "e",
+     "lens": "future"
+    },
+    {
+     "id": "Q13",
+     "chapter": "4. The Connection That Remains",
+     "round": 1,
+     "type": "single",
+     "text": "Imagine Transparent Academy five years from now. What would make you proud to be an alumnus?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Its students achieving remarkable things."
+      },
+      {
+       "id": "b",
+       "label": "Its reputation for quality education."
+      },
+      {
+       "id": "c",
+       "label": "Its positive impact on people's lives."
+      },
+      {
+       "id": "d",
+       "label": "Its willingness to evolve and improve."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What would make you proud? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "future"
+    },
+    {
+     "id": "Q13t",
+     "chapter": "4. The Connection That Remains",
+     "round": 1,
+     "type": "text",
+     "text": "What would make you proud?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q13",
+     "when": "e",
+     "lens": "future"
+    },
+    {
+     "id": "Q14",
+     "chapter": "4. The Connection That Remains",
+     "round": 1,
+     "type": "single",
+     "text": "If you could preserve one thing about Transparent Academy for future students, what would it be?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Its teaching approach."
+      },
+      {
+       "id": "b",
+       "label": "The relationships it creates."
+      },
+      {
+       "id": "c",
+       "label": "The values it stands for."
+      },
+      {
+       "id": "d",
+       "label": "The opportunities it provides."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What should never change? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "future"
+    },
+    {
+     "id": "Q14t",
+     "chapter": "4. The Connection That Remains",
+     "round": 1,
+     "type": "text",
+     "text": "What should never change?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q14",
+     "when": "e",
+     "lens": "future"
+    },
+    {
+     "id": "Q15",
+     "chapter": "4. The Connection That Remains",
+     "round": 1,
+     "type": "text",
+     "text": "If you could send one message to Transparent Academy today, what would you say?",
+     "hint": "Your own words. Share anything you'd like the academy to hear. (Optional)",
+     "max_chars": 600,
+     "na": "Skip",
+     "lens": "future"
+    }
+   ]
+  },
+  "staff": {
+   "id": "staff",
+   "label": "Staff",
+   "title": "The People Building the Future",
+   "intro": "Brand Discovery and Perception Research. Form 03, for teaching, administrative and other staff.",
+   "welcome": [
+    "Let's talk about Transparent Academy.",
+    "Every institution has a story. But the people connected to it experience that story differently.",
+    "We want to understand yours.",
+    "What stands out? What could be better? What do you wish people understood?",
+    "There are no right or wrong answers. We're interested in your honest perspective, not the answer you think someone wants to hear.",
+    "Your responses will be collected anonymously and used to understand the academy's identity and shape its future direction.",
+    "Take a few minutes, be yourself, and tell us what you really think."
+   ],
+   "consent": [
+    "Anonymous: no name, no email",
+    "About 5 to 7 minutes",
+    "Every written answer is optional",
+    "Skip anything. Stop anytime",
+    "Shown as group results only"
+   ],
+   "chapters": {
+    "1. Behind the Institution": "Every institution has a story. The people inside it know a part others may never see.",
+    "2. The Reality Behind the Scenes": "Let's talk about what happens beyond the classroom.",
+    "3. The Brand We Could Become": "Now let's imagine the possibilities.",
+    "4. Your Role in the Journey": "The future is also shaped by the people who build it."
+   },
+   "seconds_per_question": 25,
+   "dedupe_by_device": false,
+   "round2_offer": false,
+   "questions": [
+    {
+     "id": "Q1",
+     "chapter": "1. Behind the Institution",
+     "round": 1,
+     "type": "single",
+     "text": "When you think of Transparent Academy, what's the first thing that comes to mind?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Its educational mission."
+      },
+      {
+       "id": "b",
+       "label": "Its students and their growth."
+      },
+      {
+       "id": "c",
+       "label": "Its operational challenges and areas for improvement.",
+       "signal": "critical"
+      },
+      {
+       "id": "d",
+       "label": "Its people and potential for the future."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What was your first thought? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "perception"
+    },
+    {
+     "id": "Q1t",
+     "chapter": "1. Behind the Institution",
+     "round": 1,
+     "type": "text",
+     "text": "What was your first thought?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q1",
+     "when": "e",
+     "lens": "perception"
+    },
+    {
+     "id": "Q2",
+     "chapter": "1. Behind the Institution",
+     "round": 1,
+     "type": "single",
+     "text": "How would you describe Transparent Academy to someone who has never heard of it?",
+     "options": [
+      {
+       "id": "a",
+       "label": "An institution focused on academic achievement."
+      },
+      {
+       "id": "b",
+       "label": "A place that supports student development."
+      },
+      {
+       "id": "c",
+       "label": "A growing institution still defining its identity.",
+       "signal": "critical"
+      },
+      {
+       "id": "d",
+       "label": "An institution with potential that isn't fully recognised.",
+       "signal": "critical"
+      },
+      {
+       "id": "e",
+       "label": "Something else? How would you introduce the academy? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "perception"
+    },
+    {
+     "id": "Q2t",
+     "chapter": "1. Behind the Institution",
+     "round": 1,
+     "type": "text",
+     "text": "How would you introduce the academy?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q2",
+     "when": "e",
+     "lens": "perception"
+    },
+    {
+     "id": "Q3",
+     "chapter": "1. Behind the Institution",
+     "round": 1,
+     "type": "single",
+     "text": "What part of working at Transparent Academy gives you the greatest sense of purpose?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Seeing students improve."
+      },
+      {
+       "id": "b",
+       "label": "Contributing to the institution's growth."
+      },
+      {
+       "id": "c",
+       "label": "Working with colleagues and solving challenges."
+      },
+      {
+       "id": "d",
+       "label": "Developing my own skills and knowledge."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What makes your work meaningful? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "emotion"
+    },
+    {
+     "id": "Q3t",
+     "chapter": "1. Behind the Institution",
+     "round": 1,
+     "type": "text",
+     "text": "What makes your work meaningful?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q3",
+     "when": "e",
+     "lens": "emotion"
+    },
+    {
+     "id": "Q4",
+     "chapter": "2. The Reality Behind the Scenes",
+     "round": 1,
+     "type": "single",
+     "text": "What do you think students value most about Transparent Academy?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Teaching quality."
+      },
+      {
+       "id": "b",
+       "label": "Personal attention and support."
+      },
+      {
+       "id": "c",
+       "label": "Academic results and achievements."
+      },
+      {
+       "id": "d",
+       "label": "The overall learning experience."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What do students value that we might overlook? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "perception"
+    },
+    {
+     "id": "Q4t",
+     "chapter": "2. The Reality Behind the Scenes",
+     "round": 1,
+     "type": "text",
+     "text": "What do students value that we might overlook?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q4",
+     "when": "e",
+     "lens": "perception"
+    },
+    {
+     "id": "Q5",
+     "chapter": "2. The Reality Behind the Scenes",
+     "round": 1,
+     "type": "single",
+     "text": "What do you think Transparent Academy does particularly well?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Teaching and academic delivery."
+      },
+      {
+       "id": "b",
+       "label": "Student relationships and support."
+      },
+      {
+       "id": "c",
+       "label": "Managing everyday operations."
+      },
+      {
+       "id": "d",
+       "label": "Creating opportunities for growth."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What is the institution's strongest quality? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "perception"
+    },
+    {
+     "id": "Q5t",
+     "chapter": "2. The Reality Behind the Scenes",
+     "round": 1,
+     "type": "text",
+     "text": "What is the institution's strongest quality?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q5",
+     "when": "e",
+     "lens": "perception"
+    },
+    {
+     "id": "Q6",
+     "chapter": "2. The Reality Behind the Scenes",
+     "round": 1,
+     "type": "single",
+     "text": "What challenge prevents Transparent Academy from reaching its full potential?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Limited visibility and brand awareness."
+      },
+      {
+       "id": "b",
+       "label": "Internal communication or coordination."
+      },
+      {
+       "id": "c",
+       "label": "Resources, infrastructure, or technology."
+      },
+      {
+       "id": "d",
+       "label": "Lack of a clear long-term direction."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What challenge should we address first? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "gap",
+     "needs": true
+    },
+    {
+     "id": "Q6t",
+     "chapter": "2. The Reality Behind the Scenes",
+     "round": 1,
+     "type": "text",
+     "text": "What challenge should we address first?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q6",
+     "when": "e",
+     "lens": "gap"
+    },
+    {
+     "id": "Q7",
+     "chapter": "2. The Reality Behind the Scenes",
+     "round": 1,
+     "type": "single",
+     "text": "If Transparent Academy were a team preparing for a big match, what would it need most right now?",
+     "options": [
+      {
+       "id": "a",
+       "label": "A clearer game plan."
+      },
+      {
+       "id": "b",
+       "label": "Better teamwork and coordination."
+      },
+      {
+       "id": "c",
+       "label": "More resources and training."
+      },
+      {
+       "id": "d",
+       "label": "A fresh strategy to compete differently."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What would help the team win? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "gap",
+     "needs": true
+    },
+    {
+     "id": "Q7t",
+     "chapter": "2. The Reality Behind the Scenes",
+     "round": 1,
+     "type": "text",
+     "text": "What would help the team win?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q7",
+     "when": "e",
+     "lens": "gap"
+    },
+    {
+     "id": "Q8",
+     "chapter": "3. The Brand We Could Become",
+     "round": 1,
+     "type": "single",
+     "text": "What do you think currently makes Transparent Academy different from other educational institutions?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Its teaching approach."
+      },
+      {
+       "id": "b",
+       "label": "Its results and reputation."
+      },
+      {
+       "id": "c",
+       "label": "Its relationships with students."
+      },
+      {
+       "id": "d",
+       "label": "I'm not sure what makes it different.",
+       "signal": "critical"
+      },
+      {
+       "id": "e",
+       "label": "Something else? What genuinely sets it apart, if anything? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "perception"
+    },
+    {
+     "id": "Q8t",
+     "chapter": "3. The Brand We Could Become",
+     "round": 1,
+     "type": "text",
+     "text": "What genuinely sets it apart, if anything?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q8",
+     "when": "e",
+     "lens": "perception"
+    },
+    {
+     "id": "Q9",
+     "chapter": "3. The Brand We Could Become",
+     "round": 1,
+     "type": "single",
+     "text": "Imagine Transparent Academy five years from now. What would you most like it to be known for?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Consistently strong academic outcomes."
+      },
+      {
+       "id": "b",
+       "label": "Exceptional student development."
+      },
+      {
+       "id": "c",
+       "label": "A distinctive and trusted educational brand."
+      },
+      {
+       "id": "d",
+       "label": "Innovative teaching and learning experiences."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What should its future reputation be? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "future"
+    },
+    {
+     "id": "Q9t",
+     "chapter": "3. The Brand We Could Become",
+     "round": 1,
+     "type": "text",
+     "text": "What should its future reputation be?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q9",
+     "when": "e",
+     "lens": "future"
+    },
+    {
+     "id": "Q10",
+     "chapter": "3. The Brand We Could Become",
+     "round": 1,
+     "type": "single",
+     "text": "What should Transparent Academy never lose as it grows?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Its personal connection with students."
+      },
+      {
+       "id": "b",
+       "label": "Its educational standards."
+      },
+      {
+       "id": "c",
+       "label": "Its core values and principles."
+      },
+      {
+       "id": "d",
+       "label": "The commitment and contribution of its people."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What must remain unchanged? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "future"
+    },
+    {
+     "id": "Q10t",
+     "chapter": "3. The Brand We Could Become",
+     "round": 1,
+     "type": "text",
+     "text": "What must remain unchanged?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q10",
+     "when": "e",
+     "lens": "future"
+    },
+    {
+     "id": "Q11",
+     "chapter": "3. The Brand We Could Become",
+     "round": 1,
+     "type": "single",
+     "text": "If you could introduce one major change at Transparent Academy, what would you focus on?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Student experience."
+      },
+      {
+       "id": "b",
+       "label": "Teaching and learning methods."
+      },
+      {
+       "id": "c",
+       "label": "Brand positioning and public visibility."
+      },
+      {
+       "id": "d",
+       "label": "Internal culture and staff development."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What change would make the biggest difference? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "gap",
+     "needs": true
+    },
+    {
+     "id": "Q11t",
+     "chapter": "3. The Brand We Could Become",
+     "round": 1,
+     "type": "text",
+     "text": "What change would make the biggest difference?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q11",
+     "when": "e",
+     "lens": "gap"
+    },
+    {
+     "id": "Q12",
+     "chapter": "4. Your Role in the Journey",
+     "round": 1,
+     "type": "single",
+     "text": "What kind of story should Transparent Academy tell the outside world?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Stories of achievement and success."
+      },
+      {
+       "id": "b",
+       "label": "Stories of student transformation."
+      },
+      {
+       "id": "c",
+       "label": "Stories of dedicated teachers and staff."
+      },
+      {
+       "id": "d",
+       "label": "Honest stories about innovation, challenges, and growth."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What story would you like the world to hear? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "future"
+    },
+    {
+     "id": "Q12t",
+     "chapter": "4. Your Role in the Journey",
+     "round": 1,
+     "type": "text",
+     "text": "What story would you like the world to hear?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q12",
+     "when": "e",
+     "lens": "future"
+    },
+    {
+     "id": "Q13",
+     "chapter": "4. Your Role in the Journey",
+     "round": 1,
+     "type": "single",
+     "text": "What would make you more excited about being part of Transparent Academy's future?",
+     "options": [
+      {
+       "id": "a",
+       "label": "A clear vision and direction."
+      },
+      {
+       "id": "b",
+       "label": "More opportunities to contribute ideas."
+      },
+      {
+       "id": "c",
+       "label": "Greater collaboration across teams."
+      },
+      {
+       "id": "d",
+       "label": "Seeing the institution make a measurable impact."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What would motivate you most? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "emotion"
+    },
+    {
+     "id": "Q13t",
+     "chapter": "4. Your Role in the Journey",
+     "round": 1,
+     "type": "text",
+     "text": "What would motivate you most?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q13",
+     "when": "e",
+     "lens": "emotion"
+    },
+    {
+     "id": "Q14",
+     "chapter": "4. Your Role in the Journey",
+     "round": 1,
+     "type": "single",
+     "text": "If you could change one perception people have about Transparent Academy, what would it be?",
+     "options": [
+      {
+       "id": "a",
+       "label": "How people perceive its teaching quality."
+      },
+      {
+       "id": "b",
+       "label": "How people perceive its student experience."
+      },
+      {
+       "id": "c",
+       "label": "How people perceive its values and culture."
+      },
+      {
+       "id": "d",
+       "label": "How people perceive its capabilities and ambitions."
+      },
+      {
+       "id": "e",
+       "label": "Something else? What misconception should we address? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "gap",
+     "needs": true
+    },
+    {
+     "id": "Q14t",
+     "chapter": "4. Your Role in the Journey",
+     "round": 1,
+     "type": "text",
+     "text": "What misconception should we address?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q14",
+     "when": "e",
+     "lens": "gap"
+    },
+    {
+     "id": "Q15",
+     "chapter": "4. Your Role in the Journey",
+     "round": 1,
+     "type": "single",
+     "text": "Imagine a new employee joins Transparent Academy five years from now. What would you want them to hear on their first day?",
+     "options": [
+      {
+       "id": "a",
+       "label": "\"This is a place where people grow.\""
+      },
+      {
+       "id": "b",
+       "label": "\"We genuinely care about our students.\""
+      },
+      {
+       "id": "c",
+       "label": "\"We are building something meaningful together.\""
+      },
+      {
+       "id": "d",
+       "label": "\"Our work makes a difference beyond the classroom.\""
+      },
+      {
+       "id": "e",
+       "label": "Something else? What would you want them to know? (Optional)",
+       "other": true
+      }
+     ],
+     "na": "Skip",
+     "shuffle": false,
+     "lens": "future"
+    },
+    {
+     "id": "Q15t",
+     "chapter": "4. Your Role in the Journey",
+     "round": 1,
+     "type": "text",
+     "text": "What would you want them to know?",
+     "max_chars": 600,
+     "na": "Skip",
+     "follows": "Q15",
+     "when": "e",
+     "lens": "future"
+    },
+    {
+     "id": "Q16",
+     "chapter": "4. Your Role in the Journey",
+     "round": 1,
+     "type": "text",
+     "text": "If you could help shape the next chapter of Transparent Academy, what is the one thing you would want to make happen?",
+     "hint": "Your own words. Describe the future you want to help build. (Optional)",
+     "max_chars": 600,
+     "na": "Skip",
+     "lens": "future"
+    }
+   ]
+  }
+ }
+}
