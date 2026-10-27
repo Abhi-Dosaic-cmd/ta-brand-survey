@@ -246,7 +246,7 @@
     state.transcript.push({ kind: 'you', text: labelFor(q, value), fresh: true });
     if (q.follows) { state.takeQ = null; advance(); return; }   // the "Your take" box was answered or skipped
     const take = takeFor(q);
-    if (take && value === take.when) {
+    if (take && (Array.isArray(value) ? value.includes(take.when) : value === take.when)) {
       // "Something else?" was chosen: offer the optional written answer before moving on
       state.takeQ = take;
       state.mode = 'typing';
@@ -426,7 +426,7 @@
     }
 
     const sendBtn = el('button', { type: 'button', class: 'btn primary', text: t('send'), disabled: true });
-    const hint = el('p', { class: 'hint', text: t('pick_up_to', { n: q.max }) });
+    const hint = el('p', { class: 'hint', text: q.max >= list.length ? t('pick_all') : t('pick_up_to', { n: q.max }) });
     const buttons = list.map((o) => {
       const b = chip(o.label, o.icon, false, () => {
         const at = state.pending.indexOf(o.id);
