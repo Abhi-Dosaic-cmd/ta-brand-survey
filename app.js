@@ -16,6 +16,9 @@
   const PREVIEW = !!window.__PREVIEW__;
   const params = new URLSearchParams(location.search);
   let surveyId = params.get('s') || 'students';
+  // &test=1: a test run. The receiver skips its one-per-device check, marks every row TEST and does not record
+  // this device, so the form can be tried again and again without using up the device.
+  const TEST = params.get('test') === '1';
   const respondent = (params.get('r') || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 12);
   const meta = document.querySelector('meta[name="survey-relay"]');
   const relay = ((meta && meta.content) || '').replace(/\/$/, '');
@@ -29,7 +32,35 @@
 
   let config = null;
   let survey = null;
-  const lang = 'en';
+  // The language asked for (?lang=ml or the picker on the welcome screen). Default is English. Malayalam is a
+  // machine draft (config.ml_review) until a native speaker has reviewed it; the picker says so.
+  let wantLang = params.get('lang') === 'ml' ? 'ml' : 'en';
+
+  // The language actually shown and stored: Malayalam only for a survey that has it, English otherwise.
+  function curLang() {
+    return wantLang === 'ml' && config && config.ml_available && survey && survey.title_ml ? 'ml' : 'en';
+  }
+
+  // A string of the survey itself (title, question, option ...) in the current language, falling back to
+  // the English when the Malayalam is missing, so a missing string never breaks the page.
+  function tx(obj, field) {
+    const l = curLang();
+    const v = l !== 'en' ? obj[field + '_' + l] : null;
+    return v || obj[field];
+  }
+  function txList(obj, field) {
+    const l = curLang();
+    const v = l !== 'en' ? obj[field + '_' + l] : null;
+    return Array.isArray(v) && v.length === obj[field].length ? v : obj[field];
+  }
+  function chapterName(key) {
+    const l = curLang();
+    return (l !== 'en' && survey.chapter_names_ml && survey.chapter_names_ml[key]) || key;
+  }
+  function chapterIntro(key) {
+    const l = curLang();
+    return (l !== 'en' && survey.chapters_ml && survey.chapters_ml[key]) || survey.chapters[key];
+  }
 
   const state = {
     phase: 'welcome',   // welcome | chat
@@ -37,6 +68,7 @@
     round: 1,
     idx: 0,
     answers: {},
+    already: false,     // the receiver said this device has already taken part
     transcript: [],     // {kind: 'guide' | 'you' | 'chapter', text, fresh}
     marks: {},          // qid -> transcript length after its prompt was shown
     lastChapter: null,
@@ -77,7 +109,8 @@
   }
 
   function t(key, vars) {
-    let s = (config.ui[lang] && config.ui[lang][key]) || config.ui.en[key] || key;
+    const l = curLang();
+    let s = (config.ui[l] && config.ui[l][key]) || config.ui.en[key] || key;
     for (const [k, v] of Object.entries(vars || {})) s = s.replace('{' + k + '}', v);
     return s;
   }
@@ -169,7 +202,7 @@
     if (q.type === 'scale') return q.labels[value - 1];
     const byId = (id) => {
       const o = q.options.find((x) => x.id === id) || {};
-      return o.other ? 'Something else' : (o.label || id);
+      return o.other ? t('something_else') : (tx(o, 'label') || id);
     };
     return Array.isArray(value) ? value.map(byId).join(', ') : byId(value);
   }
@@ -205,10 +238,10 @@
     allQuestionsFor(round).forEach((q) => {
       if (state.answers[q.id] !== undefined) answers[q.id] = state.answers[q.id];
     });
-    return {
+    return Object.assign({
       survey: survey.id, round: round, submission_id: subId(round), device_id: state.deviceId,
-      lang: lang, respondent: respondent, group: currentGroup(), answers: answers, website: honeypot.value,
-    };
+      lang: curLang(), respondent: respondent, group: currentGroup(), answers: answers, website: honeypot.value,
+    }, TEST ? { test: true } : {});
   }
 
   // -------------------------------------------------------------------- flow
@@ -218,13 +251,13 @@
   function askCurrent() {
     const q = questionsFor(state.round)[state.idx];
     if (q.chapter !== state.lastChapter) {
-      state.transcript.push({ kind: 'chapter', text: q.chapter, fresh: true });
-      const intro = survey.chapters[q.chapter];
+      state.transcript.push({ kind: 'chapter', text: chapterName(q.chapter), fresh: true });
+      const intro = chapterIntro(q.chapter);
       if (intro) say(intro);
       state.lastChapter = q.chapter;
     }
-    say(q.text);
-    if (q.hint) say(q.hint);   // the "Your own words" prompt of a closing question
+    say(tx(q, 'text'));
+    if (q.hint) say(tx(q, 'hint'));   // the "Your own words" prompt of a closing question
     state.marks[q.id] = state.transcript.length;
     state.pending = [];
     state.mode = 'question';
@@ -251,7 +284,7 @@
       state.takeQ = take;
       state.mode = 'typing';
       render();
-      after(TYPING_MS, () => { say(take.text); state.mode = 'take'; render(); });
+      after(TYPING_MS, () => { say(tx(take, 'text')); state.mode = 'take'; render(); });
       return;
     }
     advance();
@@ -286,7 +319,9 @@
     state.retryRound = round;
     render();
     try {
-      await post('/survey/submit', payloadFor(round));
+      const res = await post('/survey/submit', payloadFor(round));
+      // "already": this device has taken part before. Nothing was saved now, so do not say "saved".
+      if (res && res.already) state.already = true;
     } catch (e) {
       say(t('error_body'));
       state.mode = 'error';
@@ -307,12 +342,13 @@
     render();
   }
 
-  function finish() { say(t('done_body')); state.mode = 'done'; }
+  function finish() { say(t(state.already ? 'already_body' : 'done_body')); state.mode = 'done'; }
 
   function startChat() {
     state.phase = 'chat';
     state.round = 1; state.idx = 0; state.answers = {}; state.transcript = [];
     state.marks = {}; state.lastChapter = null; state.subIds = {}; state.takeQ = null;
+    state.already = false;
     askCurrent();
     render();
   }
@@ -339,22 +375,32 @@
         'aria-valuenow': String(pct) }, el('span', { style: 'width:' + pct + '%' })),
       el('div', { class: 'meta' },
         el('span', { text: t('progress', { i: Math.min(state.idx + 1, list.length), n: list.length }) }),
-        el('span', { class: PREVIEW ? 'badge' : '', text: PREVIEW ? 'Preview' : (cur ? cur.chapter : '') })));
+        el('span', { class: PREVIEW || TEST ? 'badge' : '', text: PREVIEW ? 'Preview' : (TEST ? 'Test' : (cur ? chapterName(cur.chapter) : '')) })));
   }
 
   function renderWelcome() {
     const mk = (id, label) => el('button', { type: 'button', text: label, 'aria-pressed': String(surveyId === id),
       onclick: () => switchSurvey(id) });
-    const h1 = el('h1', { text: survey.title, tabindex: '-1' });
+    // Language picker, only for a survey that has Malayalam. The Malayalam option names its review status
+    // (config.ml_review) on purpose: it is a machine draft until a native speaker has reviewed it.
+    const pick = (code, label) => el('button', { type: 'button', text: label, lang: code,
+      'aria-pressed': String(curLang() === code), onclick: () => { wantLang = code; render(); } });
+    const picker = config.ml_available && survey.title_ml
+      ? el('div', { class: 'switch', role: 'group', 'aria-label': 'Language' },
+        pick('en', 'English'),
+        pick('ml', 'മലയാളം (' + (config.ml_review || 'draft') + ')'))
+      : null;
+    const h1 = el('h1', { text: tx(survey, 'title'), tabindex: '-1' });
     put(
       el('div', { class: 'top' }, el('div', { class: 'bar' }, el('span', { style: 'width:0%' }))),
       el('p', { class: 'brand', text: 'Transparent Academy' }),
+      picker,
       h1,
-      el('p', { text: survey.intro }),
-      (survey.welcome || []).map((line) => el('p', { class: 'welcome', text: line })),
+      el('p', { text: tx(survey, 'intro') }),
+      (survey.welcome ? txList(survey, 'welcome') : []).map((line) => el('p', { class: 'welcome', text: line })),
       el('p', { class: 'muted', text: t(survey.dedupe_by_device ? 'meta' : 'meta_named',
         { n: questionsFor(1).length, m: minutesFor(questionsFor(1).length) }) }),
-      el('ul', { class: 'consent' }, survey.consent.map((line) => el('li', { text: line }))),
+      el('ul', { class: 'consent' }, txList(survey, 'consent').map((line) => el('li', { text: line }))),
       PREVIEW ? el('p', { class: 'preview', text: t('preview_note') }) : null,
       PREVIEW ? el('div', { class: 'switch' },
         Object.entries(config.surveys).map(([id, s]) => mk(id, s.label || s.title))) : null,
@@ -397,7 +443,7 @@
   function textBlock(q) {
     const box = el('textarea', { rows: '4', maxlength: String(q.max_chars || 600), dir: 'auto',
       autocomplete: 'off', spellcheck: 'false', placeholder: t('text_placeholder'),
-      'aria-label': q.text });
+      'aria-label': tx(q, 'text') });
     const send = el('button', { type: 'button', class: 'btn primary', text: t('send'), disabled: true });
     box.addEventListener('input', () => { send.disabled = box.value.trim().length === 0; });
     // "na" is the skip token on the wire, so a person who really writes "na" gets a full stop added
@@ -419,7 +465,7 @@
 
     if (q.type !== 'multi') {
       const replies = el('div', { class: 'replies' + (cards ? ' cards' : '') },
-        list.map((o) => chip(o.label, o.icon, state.answers[q.id] === o.id, () => answer(q, o.id))));
+        list.map((o) => chip(tx(o, 'label'), o.icon, state.answers[q.id] === o.id, () => answer(q, o.id))));
       return [replies,
         el('div', { class: 'actions' }, q.na ? el('button', { type: 'button', class: 'link', text: t('skip'),
           onclick: () => answer(q, NA) }) : null, undoLink())];
@@ -428,7 +474,7 @@
     const sendBtn = el('button', { type: 'button', class: 'btn primary', text: t('send'), disabled: true });
     const hint = el('p', { class: 'hint', text: q.max >= list.length ? t('pick_all') : t('pick_up_to', { n: q.max }) });
     const buttons = list.map((o) => {
-      const b = chip(o.label, o.icon, false, () => {
+      const b = chip(tx(o, 'label'), o.icon, false, () => {
         const at = state.pending.indexOf(o.id);
         if (at >= 0) state.pending.splice(at, 1);
         else if (state.pending.length < q.max) state.pending.push(o.id);
@@ -508,6 +554,7 @@
 
   function render() {
     root.replaceChildren();
+    document.documentElement.lang = curLang();
     if (state.phase === 'welcome') { renderWelcome(); window.scrollTo(0, 0); return; }
     renderChat();
     requestAnimationFrame(() => {

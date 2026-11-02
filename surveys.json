@@ -1,6 +1,7 @@
 {
  "version": 10,
- "ml_available": false,
+ "ml_available": true,
+ "ml_review": "machine draft",
  "ui": {
   "en": {
    "start": "Let's start",
@@ -29,7 +30,27 @@
    "preview_note": "Preview. Nothing you tap is saved.",
    "text_placeholder": "Write in any language. Please no names or phone numbers.",
    "credit": "Research conducted by Polaris Concepts LLP for Transparent Academy.",
-   "unknown_survey": "This link is not valid."
+   "unknown_survey": "This link is not valid.",
+   "something_else": "Something else",
+   "already_body": "You've already taken part, thank you"
+  },
+  "ml": {
+   "start": "തുടങ്ങാം",
+   "send": "അയയ്ക്കുക",
+   "undo": "പിന്നോട്ട്",
+   "skip": "ഒഴിവാക്കുക",
+   "pick_all": "ബാധകമായതെല്ലാം തിരഞ്ഞെടുക്കാം",
+   "progress": "{n}-ൽ {i}",
+   "meta": "{n} ചോദ്യങ്ങൾ · ഏകദേശം {m} മിനിറ്റ് · പേര് വേണ്ട",
+   "done_body": "നന്ദി. നിങ്ങളുടെ ഉത്തരങ്ങൾ സേവ് ചെയ്തു. ഈ പേജ് അടയ്ക്കാം.",
+   "error_body": "സേവ് ചെയ്യാൻ കഴിഞ്ഞില്ല. ഇന്റർനെറ്റ് കണക്ഷൻ നോക്കിയിട്ട് വീണ്ടും ശ്രമിക്കൂ.",
+   "retry": "വീണ്ടും ശ്രമിക്കൂ",
+   "skipped": "ഒഴിവാക്കി",
+   "text_placeholder": "ഏത് ഭാഷയിലും എഴുതാം. പേരോ ഫോൺ നമ്പറോ വേണ്ട.",
+   "credit": "Transparent Academy-ക്ക് വേണ്ടി Polaris Concepts LLP നടത്തുന്ന പഠനം.",
+   "unknown_survey": "ഈ ലിങ്ക് ശരിയല്ല.",
+   "something_else": "മറ്റെന്തെങ്കിലും",
+   "already_body": "നിങ്ങൾ ഇതിൽ ഇതിനകം പങ്കെടുത്തിട്ടുണ്ട്. നന്ദി!"
   }
  },
  "surveys": {
@@ -72,21 +93,25 @@
      "options": [
       {
        "id": "a",
-       "label": "Pursuing Foundation (CA/CMA)"
+       "label": "Pursuing Foundation (CA/CMA)",
+       "label_ml": "ഫൗണ്ടേഷൻ (CA/CMA) പഠിക്കുന്നു"
       },
       {
        "id": "b",
-       "label": "Pursuing Intermediate (CA/CMA)"
+       "label": "Pursuing Intermediate (CA/CMA)",
+       "label_ml": "ഇന്റർമീഡിയറ്റ് (CA/CMA) പഠിക്കുന്നു"
       },
       {
        "id": "c",
-       "label": "Pursued Foundation here & now Pursuing Intermediate (CA/CMA)"
+       "label": "Pursued Foundation here & now Pursuing Intermediate (CA/CMA)",
+       "label_ml": "ഫൗണ്ടേഷൻ ഇവിടെ പഠിച്ചു, ഇപ്പോൾ ഇന്റർമീഡിയറ്റ് (CA/CMA) പഠിക്കുന്നു"
       }
      ],
      "na": "Skip",
      "shuffle": false,
      "lens": "profile",
-     "max": 3
+     "max": 3,
+     "text_ml": "Transparent-ലെ നിങ്ങളുടെ യാത്ര?"
     },
     {
      "id": "Q2",
@@ -97,31 +122,37 @@
      "options": [
       {
        "id": "a",
-       "label": "A place that helps students move towards their goals."
+       "label": "A place that helps students move towards their goals.",
+       "label_ml": "വിദ്യാർത്ഥികളെ അവരുടെ ലക്ഷ്യങ്ങളിലേക്ക് എത്താൻ സഹായിക്കുന്ന ഒരിടം."
       },
       {
        "id": "b",
-       "label": "A result focused institution."
+       "label": "A result focused institution.",
+       "label_ml": "റിസൾട്ടിന് പ്രാധാന്യം കൊടുക്കുന്ന സ്ഥാപനം."
       },
       {
        "id": "c",
-       "label": "Friends, teachers, and relationships."
+       "label": "Friends, teachers, and relationships.",
+       "label_ml": "കൂട്ടുകാർ, അധ്യാപകർ, ബന്ധങ്ങൾ."
       },
       {
        "id": "d",
        "label": "Not a particularly distinctive identity.",
-       "signal": "critical"
+       "signal": "critical",
+       "label_ml": "പ്രത്യേകിച്ച് വ്യത്യസ്തമായ ഒരു വ്യക്തിത്വമില്ല."
       },
       {
        "id": "e",
        "label": "Something else? Tell us in your own words. (Optional)",
-       "other": true
+       "other": true,
+       "label_ml": "മറ്റെന്തെങ്കിലും? നിങ്ങളുടെ സ്വന്തം വാക്കുകളിൽ പറയൂ. (നിർബന്ധമില്ല)"
       }
      ],
      "na": "Skip",
      "shuffle": false,
      "lens": "perception",
-     "max": 5
+     "max": 5,
+     "text_ml": "Transparent Academy എന്ന് കേൾക്കുമ്പോൾ ആദ്യം മനസ്സിൽ വരുന്നത് എന്താണ്?"
     },
     {
      "id": "Q2t",
@@ -133,7 +164,8 @@
      "na": "Skip",
      "follows": "Q2",
      "when": "e",
-     "lens": "perception"
+     "lens": "perception",
+     "text_ml": "നിങ്ങളുടെ സ്വന്തം വാക്കുകളിൽ പറയൂ."
     },
     {
      "id": "Q3",
@@ -144,26 +176,31 @@
      "options": [
       {
        "id": "a",
-       "label": "A recommendation from someone I trusted."
+       "label": "A recommendation from someone I trusted.",
+       "label_ml": "ഞാൻ വിശ്വസിക്കുന്ന ഒരാളുടെ ശുപാർശ."
       },
       {
        "id": "b",
-       "label": "Reputation and results."
+       "label": "Reputation and results.",
+       "label_ml": "പേരും റിസൾട്ടും."
       },
       {
        "id": "c",
-       "label": "Campus Visit"
+       "label": "Campus Visit",
+       "label_ml": "ക്യാമ്പസ് സന്ദർശനം"
       },
       {
        "id": "e",
        "label": "Something else? Tell us what influenced your decision. (Optional)",
-       "other": true
+       "other": true,
+       "label_ml": "മറ്റെന്തെങ്കിലും? എന്താണ് നിങ്ങളുടെ തീരുമാനത്തെ സ്വാധീനിച്ചതെന്ന് പറയൂ. (നിർബന്ധമില്ല)"
       }
      ],
      "na": "Skip",
      "shuffle": false,
      "lens": "perception",
-     "max": 4
+     "max": 4,
+     "text_ml": "Transparent Academy-യിൽ ചേരാനുള്ള തീരുമാനത്തെ ഏറ്റവും കൂടുതൽ സ്വാധീനിച്ചത് എന്താണ്?"
     },
     {
      "id": "Q3t",
@@ -175,7 +212,8 @@
      "na": "Skip",
      "follows": "Q3",
      "when": "e",
-     "lens": "perception"
+     "lens": "perception",
+     "text_ml": "എന്താണ് നിങ്ങളുടെ തീരുമാനത്തെ സ്വാധീനിച്ചതെന്ന് പറയൂ."
     },
     {
      "id": "Q4",
@@ -186,27 +224,32 @@
      "options": [
       {
        "id": "a",
-       "label": "Supportive environment"
+       "label": "Supportive environment",
+       "label_ml": "താങ്ങാകുന്ന അന്തരീക്ഷം"
       },
       {
        "id": "b",
-       "label": "Confidence building atmosphere"
+       "label": "Confidence building atmosphere",
+       "label_ml": "ആത്മവിശ്വാസം വളർത്തുന്ന അന്തരീക്ഷം"
       },
       {
        "id": "c",
        "label": "Pressured & Overwhelming",
-       "signal": "critical"
+       "signal": "critical",
+       "label_ml": "സമ്മർദ്ദവും താങ്ങാനാവാത്ത ഭാരവും"
       },
       {
        "id": "e",
        "label": "Something else? Describe your experience. (Optional)",
-       "other": true
+       "other": true,
+       "label_ml": "മറ്റെന്തെങ്കിലും? നിങ്ങളുടെ അനുഭവം വിവരിക്കൂ. (നിർബന്ധമില്ല)"
       }
      ],
      "na": "Skip",
      "shuffle": false,
      "lens": "emotion",
-     "max": 4
+     "max": 4,
+     "text_ml": "Transparent Academy-യിലെ നിങ്ങളുടെ അനുഭവത്തെ ഏറ്റവും നന്നായി വിവരിക്കുന്നത് ഏത് വാചകമാണ്?"
     },
     {
      "id": "Q4t",
@@ -218,7 +261,8 @@
      "na": "Skip",
      "follows": "Q4",
      "when": "e",
-     "lens": "emotion"
+     "lens": "emotion",
+     "text_ml": "നിങ്ങളുടെ അനുഭവം വിവരിക്കൂ."
     },
     {
      "id": "Q5",
@@ -229,32 +273,38 @@
      "options": [
       {
        "id": "a",
-       "label": "A mentor who guides me."
+       "label": "A mentor who guides me.",
+       "label_ml": "എനിക്ക് വഴി കാണിക്കുന്ന ഒരു മെന്റർ."
       },
       {
        "id": "b",
        "label": "A strict coach who expects results, sometimes without understanding my struggles.",
-       "signal": "critical"
+       "signal": "critical",
+       "label_ml": "റിസൾട്ട് മാത്രം പ്രതീക്ഷിക്കുന്ന, ചിലപ്പോൾ എന്റെ ബുദ്ധിമുട്ടുകൾ മനസ്സിലാക്കാത്ത കർക്കശക്കാരനായ കോച്ച്."
       },
       {
        "id": "c",
-       "label": "A supportive friend who encourages me to grow."
+       "label": "A supportive friend who encourages me to grow.",
+       "label_ml": "വളരാൻ എന്നെ പ്രോത്സാഹിപ്പിക്കുന്ന കൂടെ നിൽക്കുന്ന ഒരു കൂട്ടുകാരൻ."
       },
       {
        "id": "d",
        "label": "Yet to figure out",
-       "signal": "critical"
+       "signal": "critical",
+       "label_ml": "ഇതുവരെ മനസ്സിലായിട്ടില്ല"
       },
       {
        "id": "e",
        "label": "Something else? Describe your comparison. (Optional)",
-       "other": true
+       "other": true,
+       "label_ml": "മറ്റെന്തെങ്കിലും? നിങ്ങളുടെ താരതമ്യം വിവരിക്കൂ. (നിർബന്ധമില്ല)"
       }
      ],
      "na": "Skip",
      "shuffle": false,
      "lens": "emotion",
-     "max": 5
+     "max": 5,
+     "text_ml": "Transparent Academy നിങ്ങളുടെ ജീവിതത്തിലെ ഒരു വ്യക്തിയായിരുന്നെങ്കിൽ, അത് ആരായിരിക്കും?"
     },
     {
      "id": "Q5t",
@@ -266,7 +316,8 @@
      "na": "Skip",
      "follows": "Q5",
      "when": "e",
-     "lens": "emotion"
+     "lens": "emotion",
+     "text_ml": "നിങ്ങളുടെ താരതമ്യം വിവരിക്കൂ."
     },
     {
      "id": "Q6",
@@ -277,31 +328,37 @@
      "options": [
       {
        "id": "a",
-       "label": "Useful educational content and learning tips."
+       "label": "Useful educational content and learning tips.",
+       "label_ml": "ഉപകാരപ്രദമായ പഠന വിവരങ്ങളും പഠന ടിപ്സും."
       },
       {
        "id": "b",
-       "label": "Student achievements and success stories."
+       "label": "Student achievements and success stories.",
+       "label_ml": "വിദ്യാർത്ഥികളുടെ നേട്ടങ്ങളും വിജയകഥകളും."
       },
       {
        "id": "c",
        "label": "Nothing particularly memorable or relevant to me.",
-       "signal": "critical"
+       "signal": "critical",
+       "label_ml": "ഓർത്തിരിക്കാനോ എനിക്ക് പ്രസക്തമെന്ന് തോന്നാനോ പ്രത്യേകിച്ച് ഒന്നുമില്ല."
       },
       {
        "id": "d",
-       "label": "Updates about courses, opportunities, and activities."
+       "label": "Updates about courses, opportunities, and activities.",
+       "label_ml": "കോഴ്സുകൾ, അവസരങ്ങൾ, പരിപാടികൾ എന്നിവയെ കുറിച്ചുള്ള അപ്ഡേറ്റുകൾ."
       },
       {
        "id": "e",
        "label": "Something else? What content, if any, would you miss? (Optional)",
-       "other": true
+       "other": true,
+       "label_ml": "മറ്റെന്തെങ്കിലും? ഏത് ഉള്ളടക്കമാണ് മിസ് ചെയ്യുക, ഉണ്ടെങ്കിൽ? (നിർബന്ധമില്ല)"
       }
      ],
      "na": "Skip",
      "shuffle": false,
      "lens": "emotion",
-     "max": 5
+     "max": 5,
+     "text_ml": "ഒരു മാസത്തേക്ക് Transparent Academy നിങ്ങളുടെ സോഷ്യൽ മീഡിയ ഫീഡിൽ നിന്ന് ഇല്ലാതായാൽ, എന്താണ് കാണാതെ നിങ്ങൾക്ക് മിസ് ചെയ്യുക?"
     },
     {
      "id": "Q6t",
@@ -313,7 +370,8 @@
      "na": "Skip",
      "follows": "Q6",
      "when": "e",
-     "lens": "emotion"
+     "lens": "emotion",
+     "text_ml": "ഏത് ഉള്ളടക്കമാണ് മിസ് ചെയ്യുക, ഉണ്ടെങ്കിൽ?"
     },
     {
      "id": "Q7",
@@ -324,27 +382,32 @@
      "options": [
       {
        "id": "a",
-       "label": "Highly confident of a solution"
+       "label": "Highly confident of a solution",
+       "label_ml": "പരിഹാരം കിട്ടുമെന്ന് നല്ല ഉറപ്പുണ്ട്"
       },
       {
        "id": "b",
-       "label": "Fairly confident"
+       "label": "Fairly confident",
+       "label_ml": "കുറെയൊക്കെ ഉറപ്പുണ്ട്"
       },
       {
        "id": "c",
        "label": "I am unsure",
-       "signal": "critical"
+       "signal": "critical",
+       "label_ml": "എനിക്ക് ഉറപ്പില്ല"
       },
       {
        "id": "d",
        "label": "Will handle it myself",
-       "signal": "critical"
+       "signal": "critical",
+       "label_ml": "ഞാൻ തന്നെ കൈകാര്യം ചെയ്യും"
       }
      ],
      "na": "Skip",
      "shuffle": false,
      "lens": "gap",
-     "max": 4
+     "max": 4,
+     "text_ml": "നിങ്ങൾക്ക് എന്തെങ്കിലും പ്രശ്നം വന്നാൽ, നിങ്ങളെ കേൾക്കുമെന്നും പ്രശ്നം ന്യായമായി പരിഹരിക്കുമെന്നും എത്ര ഉറപ്പുണ്ട്?"
     },
     {
      "id": "Q8",
@@ -355,30 +418,36 @@
      "options": [
       {
        "id": "a",
-       "label": "Class room"
+       "label": "Class room",
+       "label_ml": "ക്ലാസ് റൂം"
       },
       {
        "id": "b",
-       "label": "Cafeteria"
+       "label": "Cafeteria",
+       "label_ml": "കഫറ്റീരിയ"
       },
       {
        "id": "c",
-       "label": "Outdoor seating area"
+       "label": "Outdoor seating area",
+       "label_ml": "പുറത്തുള്ള ഇരിപ്പിടം"
       },
       {
        "id": "d",
-       "label": "I like this place over all"
+       "label": "I like this place over all",
+       "label_ml": "ഈ സ്ഥലം മൊത്തത്തിൽ എനിക്ക് ഇഷ്ടമാണ്"
       },
       {
        "id": "e",
        "label": "None of this, I want something more (Mention)",
-       "other": true
+       "other": true,
+       "label_ml": "ഇതൊന്നുമല്ല, എനിക്ക് കൂടുതൽ എന്തെങ്കിലും വേണം (പറയൂ)"
       }
      ],
      "na": "Skip",
      "shuffle": false,
      "lens": "emotion",
-     "max": 5
+     "max": 5,
+     "text_ml": "ക്യാമ്പസിൽ നിങ്ങളുടെ ഇഷ്ടപ്പെട്ട സ്ഥലം ഏതാണ്?"
     },
     {
      "id": "Q8t",
@@ -390,7 +459,8 @@
      "na": "Skip",
      "follows": "Q8",
      "when": "e",
-     "lens": "emotion"
+     "lens": "emotion",
+     "text_ml": "നിങ്ങളുടെ മനസ്സിലുള്ളത് പറയൂ."
     },
     {
      "id": "Q9",
@@ -401,27 +471,32 @@
      "options": [
       {
        "id": "a",
-       "label": "I like it, it boosts my confidence"
+       "label": "I like it, it boosts my confidence",
+       "label_ml": "എനിക്ക് ഇഷ്ടമാണ്, അത് എന്റെ ആത്മവിശ്വാസം കൂട്ടുന്നു"
       },
       {
        "id": "b",
-       "label": "It's a pressure, but I know it helps"
+       "label": "It's a pressure, but I know it helps",
+       "label_ml": "സമ്മർദ്ദമാണ്, പക്ഷേ അത് ഉപകാരപ്പെടുമെന്ന് എനിക്കറിയാം"
       },
       {
        "id": "c",
        "label": "Too many exams… Phew",
-       "signal": "critical"
+       "signal": "critical",
+       "label_ml": "പരീക്ഷകൾ വളരെ കൂടുതലാണ്… ഹോ!"
       },
       {
        "id": "e",
        "label": "I have another view on the exams",
-       "other": true
+       "other": true,
+       "label_ml": "പരീക്ഷകളെ കുറിച്ച് എനിക്ക് മറ്റൊരു അഭിപ്രായമുണ്ട്"
       }
      ],
      "na": "Skip",
      "shuffle": false,
      "lens": "emotion",
-     "max": 4
+     "max": 4,
+     "text_ml": "Transparent-ലെ പരീക്ഷകൾ?"
     },
     {
      "id": "Q9t",
@@ -433,7 +508,8 @@
      "na": "Skip",
      "follows": "Q9",
      "when": "e",
-     "lens": "emotion"
+     "lens": "emotion",
+     "text_ml": "പരീക്ഷകളെ കുറിച്ചുള്ള നിങ്ങളുടെ അഭിപ്രായം പറയൂ."
     },
     {
      "id": "Q10",
@@ -444,31 +520,37 @@
      "options": [
       {
        "id": "a",
-       "label": "Our academic pressure and expectations."
+       "label": "Our academic pressure and expectations.",
+       "label_ml": "ഞങ്ങളുടെ പഠന സമ്മർദ്ദവും പ്രതീക്ഷകളും."
       },
       {
        "id": "b",
-       "label": "Our personal struggles, responsibilities, and limitations."
+       "label": "Our personal struggles, responsibilities, and limitations.",
+       "label_ml": "ഞങ്ങളുടെ വ്യക്തിപരമായ ബുദ്ധിമുട്ടുകളും ഉത്തരവാദിത്തങ്ങളും പരിമിതികളും."
       },
       {
        "id": "c",
-       "label": "Our ambitions beyond academics."
+       "label": "Our ambitions beyond academics.",
+       "label_ml": "പഠനത്തിനപ്പുറമുള്ള ഞങ്ങളുടെ സ്വപ്നങ്ങൾ."
       },
       {
        "id": "d",
-       "label": "The way we prefer to learn, communicate, and participate."
+       "label": "The way we prefer to learn, communicate, and participate.",
+       "label_ml": "ഞങ്ങൾ പഠിക്കാനും സംസാരിക്കാനും പങ്കെടുക്കാനും ഇഷ്ടപ്പെടുന്ന രീതി."
       },
       {
        "id": "e",
        "label": "Something else? What do you wish they understood? (Optional)",
-       "other": true
+       "other": true,
+       "label_ml": "മറ്റെന്തെങ്കിലും? അവർ മനസ്സിലാക്കണമെന്ന് നിങ്ങൾ ആഗ്രഹിക്കുന്നത് എന്താണ്? (നിർബന്ധമില്ല)"
       }
      ],
      "na": "Skip",
      "shuffle": false,
      "lens": "gap",
      "max": 5,
-     "needs": true
+     "needs": true,
+     "text_ml": "നിങ്ങളെപ്പോലുള്ള വിദ്യാർത്ഥികളെ കുറിച്ച് Transparent Academy കുറച്ചുകൂടി നന്നായി മനസ്സിലാക്കണമെന്ന് നിങ്ങൾ ആഗ്രഹിക്കുന്നത് എന്താണ്?"
     },
     {
      "id": "Q10t",
@@ -480,7 +562,8 @@
      "na": "Skip",
      "follows": "Q10",
      "when": "e",
-     "lens": "gap"
+     "lens": "gap",
+     "text_ml": "അവർ മനസ്സിലാക്കണമെന്ന് നിങ്ങൾ ആഗ്രഹിക്കുന്നത് എന്താണ്?"
     },
     {
      "id": "Q11",
@@ -491,31 +574,37 @@
      "options": [
       {
        "id": "a",
-       "label": "More engaging and interactive learning experiences."
+       "label": "More engaging and interactive learning experiences.",
+       "label_ml": "കൂടുതൽ രസകരവും പങ്കാളിത്തമുള്ളതുമായ പഠനാനുഭവങ്ങൾ."
       },
       {
        "id": "b",
-       "label": "Personalized support & Mentoring"
+       "label": "Personalized support & Mentoring",
+       "label_ml": "ഓരോരുത്തർക്കും വേണ്ട പിന്തുണയും മെന്ററിങ്ങും"
       },
       {
        "id": "c",
-       "label": "Digital content to support the classes"
+       "label": "Digital content to support the classes",
+       "label_ml": "ക്ലാസുകളെ സഹായിക്കുന്ന ഡിജിറ്റൽ ഉള്ളടക്കം"
       },
       {
        "id": "d",
-       "label": "More facilities like reading room beyond class hours"
+       "label": "More facilities like reading room beyond class hours",
+       "label_ml": "ക്ലാസ് സമയത്തിന് ശേഷവും ഉപയോഗിക്കാവുന്ന റീഡിങ് റൂം പോലുള്ള കൂടുതൽ സൗകര്യങ്ങൾ"
       },
       {
        "id": "e",
        "label": "Something else? What would you change? (Optional)",
-       "other": true
+       "other": true,
+       "label_ml": "മറ്റെന്തെങ്കിലും? നിങ്ങൾ എന്താണ് മാറ്റുക? (നിർബന്ധമില്ല)"
       }
      ],
      "na": "Skip",
      "shuffle": false,
      "lens": "gap",
      "max": 5,
-     "needs": true
+     "needs": true,
+     "text_ml": "Transparent Academy-യിലെ നിങ്ങളുടെ അനുഭവത്തിൽ ഒരു കാര്യം മാറ്റാൻ പറ്റുമെങ്കിൽ, അത് എന്തായിരിക്കും?"
     },
     {
      "id": "Q11t",
@@ -527,7 +616,8 @@
      "na": "Skip",
      "follows": "Q11",
      "when": "e",
-     "lens": "gap"
+     "lens": "gap",
+     "text_ml": "നിങ്ങൾ എന്താണ് മാറ്റുക?"
     },
     {
      "id": "Q12",
@@ -538,32 +628,38 @@
      "options": [
       {
        "id": "a",
-       "label": "Yes, I will strongly recommend"
+       "label": "Yes, I will strongly recommend",
+       "label_ml": "അതെ, ഞാൻ ഉറപ്പായും ശുപാർശ ചെയ്യും"
       },
       {
        "id": "b",
-       "label": "Yes, will be one among the suggestions"
+       "label": "Yes, will be one among the suggestions",
+       "label_ml": "അതെ, നിർദേശങ്ങളിൽ ഒന്നായി പറയും"
       },
       {
        "id": "c",
        "label": "Yes, but with disclaimers",
-       "signal": "critical"
+       "signal": "critical",
+       "label_ml": "അതെ, പക്ഷേ ചില മുന്നറിയിപ്പുകളോടെ"
       },
       {
        "id": "d",
        "label": "Nope",
-       "signal": "critical"
+       "signal": "critical",
+       "label_ml": "ഇല്ല"
       },
       {
        "id": "e",
        "label": "Something else? What would you actually tell them? (Optional)",
-       "other": true
+       "other": true,
+       "label_ml": "മറ്റെന്തെങ്കിലും? നിങ്ങൾ അവരോട് ശരിക്കും എന്താണ് പറയുക? (നിർബന്ധമില്ല)"
       }
      ],
      "na": "Skip",
      "shuffle": false,
      "lens": "gap",
-     "max": 5
+     "max": 5,
+     "text_ml": "നിങ്ങളുടെ കൂട്ടുകാരന് നിങ്ങൾ പഠിക്കുന്ന കോഴ്സ് പഠിക്കണമെന്ന് ആഗ്രഹമുണ്ടെങ്കിൽ, നിങ്ങൾ Transparent നിർദേശിക്കുമോ?"
     },
     {
      "id": "Q12t",
@@ -575,7 +671,8 @@
      "na": "Skip",
      "follows": "Q12",
      "when": "e",
-     "lens": "gap"
+     "lens": "gap",
+     "text_ml": "നിങ്ങൾ അവരോട് ശരിക്കും എന്താണ് പറയുക?"
     },
     {
      "id": "Q13",
@@ -586,9 +683,39 @@
      "hint": "Your own words. Share anything you'd like them to hear. (Optional)",
      "max_chars": 600,
      "na": "Skip",
-     "lens": "future"
+     "lens": "future",
+     "text_ml": "കൂടുതൽ എന്തെങ്കിലും പറയണമെന്നുണ്ടെങ്കിൽ, ഇതാ നിങ്ങളുടെ അവസരം?",
+     "hint_ml": "നിങ്ങളുടെ സ്വന്തം വാക്കുകളിൽ. അവർ കേൾക്കണമെന്ന് നിങ്ങൾ ആഗ്രഹിക്കുന്നത് എന്തും പറയാം. (നിർബന്ധമില്ല)"
     }
-   ]
+   ],
+   "title_ml": "വിദ്യാർത്ഥി അനുഭവം",
+   "intro_ml": "ബ്രാൻഡ് ഡിസ്കവറി ആൻഡ് പെർസെപ്ഷൻ റിസർച്ച്. ഫോം 01, ഇപ്പോൾ പഠിക്കുന്ന വിദ്യാർത്ഥികൾക്ക്.",
+   "welcome_ml": [
+    "നമുക്ക് Transparent Academy-യെ കുറിച്ച് സംസാരിക്കാം.",
+    "ഓരോ സ്ഥാപനത്തിനും ഒരു കഥയുണ്ട്. പക്ഷേ അതുമായി ബന്ധമുള്ളവർ ആ കഥ അനുഭവിക്കുന്നത് ഓരോ രീതിയിലാണ്.",
+    "നിങ്ങളുടെ അനുഭവം അറിയണം.",
+    "എന്താണ് എടുത്തുനിൽക്കുന്നത്? എന്താണ് മെച്ചപ്പെടുത്താനുള്ളത്? ആളുകൾ മനസ്സിലാക്കണമെന്ന് നിങ്ങൾ ആഗ്രഹിക്കുന്നത് എന്താണ്?",
+    "ശരിയായ ഉത്തരമോ തെറ്റായ ഉത്തരമോ ഇല്ല. ആരെങ്കിലും കേൾക്കാൻ ആഗ്രഹിക്കുന്നു എന്ന് നിങ്ങൾ കരുതുന്ന ഉത്തരമല്ല, നിങ്ങളുടെ സത്യസന്ധമായ അഭിപ്രായമാണ് ഞങ്ങൾക്ക് വേണ്ടത്.",
+    "നിങ്ങളുടെ ഉത്തരങ്ങൾ പേര് വെളിപ്പെടുത്താതെയാണ് ശേഖരിക്കുന്നത്. അക്കാദമിയുടെ വ്യക്തിത്വം മനസ്സിലാക്കാനും ഭാവിയിലെ വഴി രൂപപ്പെടുത്താനും ഇത് ഉപയോഗിക്കും.",
+    "കുറച്ച് മിനിറ്റ് എടുക്കൂ, നിങ്ങളായിത്തന്നെ ഇരുന്ന്, ശരിക്കും എന്താണ് തോന്നുന്നതെന്ന് പറയൂ."
+   ],
+   "consent_ml": [
+    "പേര് വേണ്ട: പേരില്ല, ഇമെയിലില്ല",
+    "ഏകദേശം 5 മുതൽ 7 മിനിറ്റ്",
+    "എഴുതി ഉത്തരം പറയണമെന്ന് നിർബന്ധമില്ല",
+    "ഏതും ഒഴിവാക്കാം. എപ്പോൾ വേണമെങ്കിലും നിർത്താം",
+    "ഗ്രൂപ്പിന്റെ ഫലമായി മാത്രമേ കാണിക്കൂ"
+   ],
+   "chapter_names_ml": {
+    "1. The First Impression": "1. ആദ്യ ധാരണ",
+    "2. The Everyday Reality": "2. ദൈനംദിന യാഥാർത്ഥ്യം",
+    "3. The Unfiltered Truth": "3. മറയില്ലാത്ത സത്യം"
+   },
+   "chapters_ml": {
+    "1. The First Impression": "കുറച്ച് പിന്നോട്ട് പോകാം.",
+    "2. The Everyday Reality": "ഇപ്പോൾ നിങ്ങൾ ഇവിടെയുണ്ടല്ലോ, ശരിക്കും എങ്ങനെയാണ് ഇവിടം?",
+    "3. The Unfiltered Truth": "ഏത് സ്ഥലത്തിനും വളരാൻ ഇടമുണ്ട്."
+   }
   },
   "alumni": {
    "id": "alumni",
@@ -1308,7 +1435,7 @@
      "id": "Q1",
      "chapter": "1. Behind the Institution",
      "round": 1,
-     "type": "single",
+     "type": "multi",
      "text": "When you think of Transparent Academy, what's the first thing that comes to mind?",
      "options": [
       {
@@ -1336,7 +1463,8 @@
      ],
      "na": "Skip",
      "shuffle": false,
-     "lens": "perception"
+     "lens": "perception",
+     "max": 5
     },
     {
      "id": "Q1t",
@@ -1354,7 +1482,7 @@
      "id": "Q2",
      "chapter": "1. Behind the Institution",
      "round": 1,
-     "type": "single",
+     "type": "multi",
      "text": "How would you describe Transparent Academy to someone who has never heard of it?",
      "options": [
       {
@@ -1383,7 +1511,8 @@
      ],
      "na": "Skip",
      "shuffle": false,
-     "lens": "perception"
+     "lens": "perception",
+     "max": 5
     },
     {
      "id": "Q2t",
@@ -1401,7 +1530,7 @@
      "id": "Q3",
      "chapter": "1. Behind the Institution",
      "round": 1,
-     "type": "single",
+     "type": "multi",
      "text": "What part of working at Transparent Academy gives you the greatest sense of purpose?",
      "options": [
       {
@@ -1428,7 +1557,8 @@
      ],
      "na": "Skip",
      "shuffle": false,
-     "lens": "emotion"
+     "lens": "emotion",
+     "max": 5
     },
     {
      "id": "Q3t",
@@ -1446,7 +1576,7 @@
      "id": "Q4",
      "chapter": "2. The Reality Behind the Scenes",
      "round": 1,
-     "type": "single",
+     "type": "multi",
      "text": "What do you think students value most about Transparent Academy?",
      "options": [
       {
@@ -1473,7 +1603,8 @@
      ],
      "na": "Skip",
      "shuffle": false,
-     "lens": "perception"
+     "lens": "perception",
+     "max": 5
     },
     {
      "id": "Q4t",
@@ -1491,7 +1622,7 @@
      "id": "Q5",
      "chapter": "2. The Reality Behind the Scenes",
      "round": 1,
-     "type": "single",
+     "type": "multi",
      "text": "What do you think Transparent Academy does particularly well?",
      "options": [
       {
@@ -1518,7 +1649,8 @@
      ],
      "na": "Skip",
      "shuffle": false,
-     "lens": "perception"
+     "lens": "perception",
+     "max": 5
     },
     {
      "id": "Q5t",
@@ -1536,7 +1668,7 @@
      "id": "Q6",
      "chapter": "2. The Reality Behind the Scenes",
      "round": 1,
-     "type": "single",
+     "type": "multi",
      "text": "What challenge prevents Transparent Academy from reaching its full potential?",
      "options": [
       {
@@ -1553,7 +1685,7 @@
       },
       {
        "id": "d",
-       "label": "Lack of a clear long-term direction."
+       "label": "Better leadership"
       },
       {
        "id": "e",
@@ -1564,6 +1696,7 @@
      "na": "Skip",
      "shuffle": false,
      "lens": "gap",
+     "max": 5,
      "needs": true
     },
     {
@@ -1582,7 +1715,7 @@
      "id": "Q7",
      "chapter": "2. The Reality Behind the Scenes",
      "round": 1,
-     "type": "single",
+     "type": "multi",
      "text": "If Transparent Academy were a team preparing for a big match, what would it need most right now?",
      "options": [
       {
@@ -1610,6 +1743,7 @@
      "na": "Skip",
      "shuffle": false,
      "lens": "gap",
+     "max": 5,
      "needs": true
     },
     {
@@ -1628,7 +1762,7 @@
      "id": "Q8",
      "chapter": "3. The Brand We Could Become",
      "round": 1,
-     "type": "single",
+     "type": "multi",
      "text": "What do you think currently makes Transparent Academy different from other educational institutions?",
      "options": [
       {
@@ -1656,7 +1790,8 @@
      ],
      "na": "Skip",
      "shuffle": false,
-     "lens": "perception"
+     "lens": "perception",
+     "max": 5
     },
     {
      "id": "Q8t",
@@ -1674,7 +1809,7 @@
      "id": "Q9",
      "chapter": "3. The Brand We Could Become",
      "round": 1,
-     "type": "single",
+     "type": "multi",
      "text": "Imagine Transparent Academy five years from now. What would you most like it to be known for?",
      "options": [
       {
@@ -1701,7 +1836,8 @@
      ],
      "na": "Skip",
      "shuffle": false,
-     "lens": "future"
+     "lens": "future",
+     "max": 5
     },
     {
      "id": "Q9t",
@@ -1719,7 +1855,7 @@
      "id": "Q10",
      "chapter": "3. The Brand We Could Become",
      "round": 1,
-     "type": "single",
+     "type": "multi",
      "text": "What should Transparent Academy never lose as it grows?",
      "options": [
       {
@@ -1746,7 +1882,8 @@
      ],
      "na": "Skip",
      "shuffle": false,
-     "lens": "future"
+     "lens": "future",
+     "max": 5
     },
     {
      "id": "Q10t",
@@ -1764,7 +1901,7 @@
      "id": "Q11",
      "chapter": "3. The Brand We Could Become",
      "round": 1,
-     "type": "single",
+     "type": "multi",
      "text": "If you could introduce one major change at Transparent Academy, what would you focus on?",
      "options": [
       {
@@ -1792,6 +1929,7 @@
      "na": "Skip",
      "shuffle": false,
      "lens": "gap",
+     "max": 5,
      "needs": true
     },
     {
@@ -1810,7 +1948,7 @@
      "id": "Q12",
      "chapter": "4. Your Role in the Journey",
      "round": 1,
-     "type": "single",
+     "type": "multi",
      "text": "What kind of story should Transparent Academy tell the outside world?",
      "options": [
       {
@@ -1837,7 +1975,8 @@
      ],
      "na": "Skip",
      "shuffle": false,
-     "lens": "future"
+     "lens": "future",
+     "max": 5
     },
     {
      "id": "Q12t",
@@ -1855,7 +1994,7 @@
      "id": "Q13",
      "chapter": "4. Your Role in the Journey",
      "round": 1,
-     "type": "single",
+     "type": "multi",
      "text": "What would make you more excited about being part of Transparent Academy's future?",
      "options": [
       {
@@ -1882,7 +2021,8 @@
      ],
      "na": "Skip",
      "shuffle": false,
-     "lens": "emotion"
+     "lens": "emotion",
+     "max": 5
     },
     {
      "id": "Q13t",
@@ -1900,7 +2040,7 @@
      "id": "Q14",
      "chapter": "4. Your Role in the Journey",
      "round": 1,
-     "type": "single",
+     "type": "multi",
      "text": "If you could change one perception people have about Transparent Academy, what would it be?",
      "options": [
       {
@@ -1928,6 +2068,7 @@
      "na": "Skip",
      "shuffle": false,
      "lens": "gap",
+     "max": 5,
      "needs": true
     },
     {
@@ -1946,7 +2087,7 @@
      "id": "Q15",
      "chapter": "4. Your Role in the Journey",
      "round": 1,
-     "type": "single",
+     "type": "multi",
      "text": "Imagine a new employee joins Transparent Academy five years from now. What would you want them to hear on their first day?",
      "options": [
       {
@@ -1973,7 +2114,8 @@
      ],
      "na": "Skip",
      "shuffle": false,
-     "lens": "future"
+     "lens": "future",
+     "max": 5
     },
     {
      "id": "Q15t",
